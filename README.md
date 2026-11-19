@@ -19,8 +19,10 @@ The checker does not store or compare the plain-text password. The stored
 value is:
 
 ```text
-7230bf7d8ac334d823aa9801b650ff3be11b3ac892993fd49c4414d6e4a40c36
+03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
 ```
+
+The default password for this example is `1234`.
 
 ## Run it
 

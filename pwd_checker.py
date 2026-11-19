@@ -4,7 +4,7 @@ import getpass
 import hashlib
 # Hashlib allows to encrypt raw-text with various kinds of encryption methods
 
-password = "7230bf7d8ac334d823aa9801b650ff3be11b3ac892993fd49c4414d6e4a40c36"
+password = "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"
 # This is an SHA-256 hash, consisting of 256 digits, which is encrypted.
 
 def prompt():

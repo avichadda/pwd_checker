@@ -5,7 +5,7 @@ import hashlib
 # Hashlib allows to encrypt raw-text with various kinds of encryption methods
 
 password = "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"
-# This is an SHA-256 hash, consisting of 256 digits, which is encrypted.
+# This is an SHA-256 hash, consisting of 256 digits, which is encrypted. The default password is `1234`.
 
 def prompt():
 # "Def" is a command to create a sub-routine.

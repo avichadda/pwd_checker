@@ -1,18 +1,41 @@
-# Password checkpoint
+# Password checker
 
-A small Vite + React front-end for the password checker. The password is hashed with
-SHA-256 in the browser and compared with the hash used by the original Python
-prototype. No password value is sent over the network.
+This project is a small Python command-line password checker. It repeatedly
+prompts for a password without displaying the typed characters, hashes the
+input with SHA-256, and compares the resulting hash with the stored hash.
 
-## Run locally
+## How it works
 
-```bash
-npm install
-npm run dev
+1. `getpass.getpass()` asks for a password while keeping it hidden.
+2. The password is encoded as UTF-8 bytes.
+3. `hashlib.sha256()` creates a one-way SHA-256 digest.
+4. The digest is converted to a hexadecimal string.
+5. The result is compared with the SHA-256 hash stored in `pwd_checker.py`.
+6. Matching input prints `Connection Successful!` and exits.
+7. Any other input prints `Connection denied! Please try again.` and prompts
+   again.
+
+The checker does not store or compare the plain-text password. The stored
+value is:
+
+```text
+7230bf7d8ac334d823aa9801b650ff3be11b3ac892993fd49c4414d6e4a40c36
 ```
 
-Create a production build with `npm run build`.
+## Run it
 
-> This is a local demonstration of password verification, not a production
-> authentication system. Production applications should verify credentials on a
-> server and use a slow, salted password-hashing algorithm.
+From the project directory, run:
+
+```bash
+python3 pwd_checker.py
+```
+
+Press `Ctrl+C` to stop the checker while it is waiting for input.
+
+## Security note
+
+This is an educational example. A production authentication system should
+verify credentials on a server, use a unique salt, and use a password-specific
+slow hashing algorithm such as Argon2id, scrypt, or bcrypt. A password hash
+should also be stored outside the source code, for example in a protected
+environment variable or secrets manager.
